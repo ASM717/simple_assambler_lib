@@ -2,20 +2,20 @@
 %define dst rdi
 %define src rsi
 
+global _ft_strcpy
+
 section .text
-		global _ft_strcpy
 
 _ft_strcpy:
-		mov rcx, 0
+		xor rcx, rcx
 		.loop:
-				cmp byte[src + rcx], 0
-				je return
-				mov bl, byte[src + rcx]
-				mov byte[dst + rcx], bl
-				inc rcx
-				jmp .loop
-
-return:
-		mov byte[dst + rcx], 0
-		mov rax, dst
-		ret
+			cmp byte[src + rcx], 0
+			je return
+			mov bl, byte[src + rcx]
+			mov byte[dst + rcx], bl
+			inc rcx
+			jmp .loop
+		return:
+			mov byte[dst + rcx], 0
+			mov rax, dst
+			ret
