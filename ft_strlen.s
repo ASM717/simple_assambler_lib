@@ -2,13 +2,13 @@
 %define src rdi
 
 section .text
-		global _ft_strlen ; директива global
+		global _ft_strlen          ; direct global
 _ft_strlen:
-		xor rax, rax ;
+		xor rax, rax               ; zero rax
 		.loop:
-			cmp byte[src + rax], 0 ;[value] \0
-			je .return ;return rax
-			inc rax ; rax +1
+			cmp byte[src + rax], 0 ; [value] \0
+			je .return             ; return rax
+			inc rax                ; rax +1
 			jmp .loop
 		.return:
-			ret ;rax
+			ret                    ;rax

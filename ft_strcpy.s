@@ -8,12 +8,12 @@ _ft_strcpy:
 		xor rcx, rcx
 		.loop:
 			cmp byte[src + rcx], 0
-			je return
+			je .return
 			mov bl, byte[src + rcx]
 			mov byte[dst + rcx], bl
 			inc rcx
 			jmp .loop
-		return:
+		.return:
 			mov byte[dst + rcx], 0
 			mov rax, dst
 			ret
