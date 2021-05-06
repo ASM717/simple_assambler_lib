@@ -10,7 +10,7 @@ CC		= gcc
 RM		= rm -f
 CFLAGS	= -Wall -Wextra -Werror
 
-%.o: 			%.s
+%.o:			%.s
 				@$(NASM) $(NASM_FL) $<
 
 all:			$(NAME)

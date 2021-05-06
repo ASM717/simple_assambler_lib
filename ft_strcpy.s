@@ -2,10 +2,8 @@
 %define dst rdi
 %define src rsi
 
-global _ft_strcpy
-
 section .text
-
+		global _ft_strcpy
 _ft_strcpy:
 		xor rcx, rcx
 		.loop:

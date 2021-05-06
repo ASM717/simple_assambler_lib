@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/06 10:05:50 by amuriel           #+#    #+#             */
+/*   Updated: 2021/05/06 10:06:07 by amuriel          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libasm.h"
 #include <stdio.h>
 
@@ -22,25 +34,25 @@ void	test_strcpy(void)
 	printf("\n");
 }
 
-// void	test_strcmp(void)
-// {
-// 	printf("\n|===========|=STRCMP=|===========|\n");
-// 	printf("\ns1 > s2\n");
-// 	printf("strcmp: %d\n", strcmp("hello", "hel"));
-// 	printf("ft_strcmp: %d\n", ft_strcmp("hello", "hel"));
-// 	printf("\ns1 = s2\n");
-// 	printf("strcmp: %d\n", strcmp("hello", "hello"));
-// 	printf("ft_strcmp: %d\n", ft_strcmp("hello", "hello"));
-// 	printf("\ns1 < s2\n");
-// 	printf("strcmp: %d\n", strcmp("hel", "hello"));
-// 	printf("ft_strcmp: %d\n", ft_strcmp("hel", "hello"));
-// 	printf("\n");
-// }
+void	test_strcmp(void)
+{
+	printf("\n|===========|=STRCMP=|===========|\n");
+	printf("\ns1 > s2\n");
+	printf("strcmp: %d\n", strcmp("hello", "hel"));
+	printf("ft_strcmp: %d\n", ft_strcmp("hello", "hel"));
+	printf("\ns1 = s2\n");
+	printf("strcmp: %d\n", strcmp("hello", "hello"));
+	printf("ft_strcmp: %d\n", ft_strcmp("hello", "hello"));
+	printf("\ns1 < s2\n");
+	printf("strcmp: %d\n", strcmp("hel", "hello"));
+	printf("ft_strcmp: %d\n", ft_strcmp("hel", "hello"));
+	printf("\n");
+}
 
 int		main(void)
 {
 	test_strlen();
 	test_strcpy();
-	// test_strcmp();
+	test_strcmp();
 	return (0);
 }

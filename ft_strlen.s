@@ -1,10 +1,8 @@
 ; size_t ft_strlen(char *src)
 %define src rdi
 
-global	_ft_strlen ; директива global
-
 section .text
-
+		global _ft_strlen ; директива global
 _ft_strlen:
 		xor rax, rax ;
 		.loop:
