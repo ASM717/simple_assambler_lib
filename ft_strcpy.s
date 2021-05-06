@@ -6,14 +6,14 @@ section .text
 		global _ft_strcpy
 _ft_strcpy:
 		xor rcx, rcx
-		.loop:
+		_loop:
 			cmp byte[src + rcx], 0
-			je .return
+			je _return
 			mov bl, byte[src + rcx]
 			mov byte[dst + rcx], bl
 			inc rcx
-			jmp .loop
-		.return:
+			jmp _loop
+		_return:
 			mov byte[dst + rcx], 0
 			mov rax, dst
 			ret

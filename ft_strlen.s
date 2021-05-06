@@ -5,10 +5,10 @@ section .text
 		global _ft_strlen          ; direct global
 _ft_strlen:
 		xor rax, rax               ; zero rax
-		.loop:
+		_loop:
 			cmp byte[src + rax], 0 ; [value] \0
-			je .return             ; return rax
+			je _return             ; return rax
 			inc rax                ; rax +1
-			jmp .loop
-		.return:
+			jmp _loop
+		_return:
 			ret                    ;rax
