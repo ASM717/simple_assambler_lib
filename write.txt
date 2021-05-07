@@ -1,0 +1,2 @@
+write: hello 21 school
+ft_write: hello 21 school
