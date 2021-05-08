@@ -6,9 +6,12 @@
 /*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 10:05:50 by amuriel           #+#    #+#             */
-/*   Updated: 2021/05/06 15:45:04 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/05/08 13:54:27 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// http://www.codenet.ru/progr/asm/tasm/39.php регистры сравнения
+// http://osinavi.ru/asm/cmp.html
 
 #include "libasm.h"
 
