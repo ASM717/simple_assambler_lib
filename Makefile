@@ -1,4 +1,6 @@
 NAME	= libasm.a
+
+MAIN	= main.c
 SRCS	= ft_strlen.s ft_strcpy.s ft_strcmp.s \
 			ft_write.s ft_read.s ft_strdup.s
 
@@ -25,8 +27,13 @@ clean:
 
 fclean:			clean
 				@$(RM) $(NAME)
+				@$(RM) ./a.out
+				@$(RM) ./write.txt
 				@echo ">>>all clean done!<<<"
 
 re:				fclean $(NAME)
 
-.PHONY:			all clean fclean re
+test:
+				$(CC) $(CFLAGS) $(MAIN) $(NAME) && ./a.out
+
+.PHONY:			all clean fclean re test

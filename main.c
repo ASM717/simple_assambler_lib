@@ -10,8 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// http://www.codenet.ru/progr/asm/tasm/39.php регистры сравнения
-// http://osinavi.ru/asm/cmp.html
+/*
+	http://www.codenet.ru/progr/asm/tasm/39.php
+	http://osinavi.ru/asm/cmp.html
+	https://ravesli.com/assembler-usloviya/
+	https://cs.lmu.edu/~ray/notes/nasmtutorial/
+	http://natalia.appmat.ru/c&c++/assembler.html
+*/
 
 #include "libasm.h"
 
@@ -19,8 +24,8 @@ void	test_strlen(void)
 {
 	printf("\n|===========|=STRLEN=|===========|\n");
 	printf("\n");
-	printf("strlen: %zu\n", strlen("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasdklfnlfkm;lfmlkmc;lsmcslkmawekm;wkmq;'lwmce;wlfmw;'lmc;lemwe;lwmc;lcvmerlf;wemfpwmcslcmwpf'lewmwlcml;cvml'w;mfw';lfm;'lvemwf'l;wmwepmew;flwm;lcm,s'[ewkf'pwkf;pcm;a'cmew[wemflkmflwemwel;fmwelwem;lfmwlfkmw;klfmw;lwmc;lwmewl;melwmclcmlcwmc;lecmw;lceml;cwmec;lemew;lcmew;lcmwe;clewmc;welmcew;lcmwc;lewmc;wemwel;mewc'mwec;ewmcwe;'cmw;cmwwmcwcmwl;cmwcl;wm;clmc;w'cmw[p'kw,c;lsmcwp'fmew'pmc"));
-	printf("ft_strlen: %zu\n", ft_strlen("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasdklfnlfkm;lfmlkmc;lsmcslkmawekm;wkmq;'lwmce;wlfmw;'lmc;lemwe;lwmc;lcvmerlf;wemfpwmcslcmwpf'lewmwlcml;cvml'w;mfw';lfm;'lvemwf'l;wmwepmew;flwm;lcm,s'[ewkf'pwkf;pcm;a'cmew[wemflkmflwemwel;fmwelwem;lfmwlfkmw;klfmw;lwmc;lwmewl;melwmclcmlcwmc;lecmw;lceml;cwmec;lemew;lcmew;lcmwe;clewmc;welmcew;lcmwc;lewmc;wemwel;mewc'mwec;ewmcwe;'cmw;cmwwmcwcmwl;cmwcl;wm;clmc;w'cmw[p'kw,c;lsmcwp'fmew'pmc"));
+	printf("strlen: %zu\n", strlen("aaaaaaaaaaaaaaaaaaaaaaaaaaa"));
+	printf("ft_strlen: %zu\n", ft_strlen("aaaaaaaaaaaaaaaaaaaaaaaaaaa"));
 	printf("\n+++++strlen with empty string+++++\n");
 	printf("strlen: %zu\n", strlen(""));
 	printf("ft_strlen: %zu\n", ft_strlen(""));
@@ -44,8 +49,8 @@ void	test_strcmp(void)
 {
 	printf("\n|===========|=STRCMP=|===========|\n");
 	printf("\ns1 > s2\n");
-	printf("strcmp: %d\n", strcmp("hello", "hel"));
-	printf("ft_strcmp: %d\n", ft_strcmp("hello", "hel"));
+	printf("strcmp: %d\n", strcmp("hello", ""));
+	printf("ft_strcmp: %d\n", ft_strcmp("hello", ""));
 	printf("\ns1 = s2\n");
 	printf("strcmp: %d\n", strcmp("hello", "hello"));
 	printf("ft_strcmp: %d\n", ft_strcmp("hello", "hello"));

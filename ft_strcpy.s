@@ -6,15 +6,15 @@
 section .text
 		global _ft_strcpy
 		_ft_strcpy:
-			xor rcx, rcx
+			xor rax, rax
 		_loop:
-			cmp byte[src + rcx], 0
+			cmp byte[src + rax], 0
 			jz _return ; ZF = 1
-			mov bl, byte[src + rcx]
-			mov byte[dst + rcx], bl
-			inc rcx
+			mov dh, byte[src + rax]
+			mov byte[dst + rax], dh
+			inc rax
 			jmp _loop
 		_return:
-			mov byte[dst + rcx], 0
+			mov byte[dst + rax], 0
 			mov rax, dst
 			ret
