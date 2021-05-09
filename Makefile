@@ -16,16 +16,16 @@ CFLAGS	= -Wall -Wextra -Werror
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
-				@echo "libasm done!"
+				@ar rcs $(NAME) $(OBJS)
+				@echo ">>>libasm done!<<<"
 
 clean:
-				$(RM) $(OBJS)
-				@echo "libasm clean!"
+				@$(RM) $(OBJS)
+				@echo ">>>libasm clean!<<<"
 
 fclean:			clean
-				$(RM) $(NAME)
-				@echo "All clean done!"
+				@$(RM) $(NAME)
+				@echo ">>>all clean done!<<<"
 
 re:				fclean $(NAME)
 

@@ -9,8 +9,10 @@ section .text
 			jc _error           ; syscall change CF flag
 			ret                 ; return rax
 		_error:
-			push rax            ; push to the stack rax
+			push rdi            ; push to the stack
+			mov rdi, rax
 			call ___error
-			pop qword [rax]     ; pop from the stack
+			mov [rax], rdi
+			pop rdi
 			mov rax, -1
 			ret                 ; return rax

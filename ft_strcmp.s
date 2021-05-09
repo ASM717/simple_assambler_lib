@@ -1,11 +1,12 @@
 ; int ft_strcmp(const char *s1, const char *s2);
+
 %define s1 rdi
 %define s2 rsi
 
 section .text
 		global _ft_strcmp
 		_ft_strcmp:
-		mov rax, 0              ; zero rax
+			mov rax, 0          ; zero rax
 		_loop:
 			mov r8, [s1 + rax]  ;rdi = s1
 			mov r9, [s2 + rax]  ; rsi = s2

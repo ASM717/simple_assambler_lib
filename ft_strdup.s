@@ -8,7 +8,9 @@ section .text
 		_ft_strdup:
 			push rdi
 			call _ft_strlen
-			lea rdi, [rax + 1] ; rdi = rax + 1
+			mov rax, 0
+			inc rax
+			add rdi, rax
 			call _malloc
 			mov rdi, rax
 			pop rsi

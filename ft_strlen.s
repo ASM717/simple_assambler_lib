@@ -8,7 +8,7 @@ section .text
 			xor rax, rax           ; zero rax
 		_loop:
 			cmp byte[src + rax], 0 ; [value] \0
-			je _return             ; return rax
+			jz _return             ; return rax ZF flag = 1
 			inc rax                ; rax +1
 			jmp _loop
 		_return:
