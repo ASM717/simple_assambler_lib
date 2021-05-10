@@ -29,11 +29,11 @@ fclean:			clean
 				@$(RM) $(NAME)
 				@$(RM) ./a.out
 				@$(RM) ./write.txt
-				@echo ">>>all clean done!<<<"
+				@echo ">>>all clean file's done!<<<"
 
 re:				fclean $(NAME)
 
-test:
-				$(CC) $(CFLAGS) $(MAIN) $(NAME) && ./a.out
+test:			$(NAME)
+				$(CC) $(CFLAGS) $(MAIN) -L. -lasm && ./a.out
 
 .PHONY:			all clean fclean re test

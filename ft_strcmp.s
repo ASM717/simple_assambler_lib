@@ -14,7 +14,7 @@ section .text
 		_cmp:
 			ja  _above                 ; cmp above jump s1 > s2
 			jb  _below                 ; cmp below jump s1 < s2
-			cmp dh, 0
+			cmp dh, 0                  ; operand dh = 8bit
 			je  _equal                 ; cmp equal jump s1 = s2
 			inc rax
 			mov dh, byte [s2 + rax]    ; dh = (byte) argument2[rax] (value)

@@ -9,8 +9,8 @@ section .text
 			jc _error              ; syscall change CF flag
 			ret                    ; return rax
 		_error:
-			mov r15, rax
+			push rax
 			call ___error
-			mov qword [rax], r15
+			pop qword [rax]        ; for errno qword 64bit
 			mov rax, -1
 			ret                    ; rax = -1

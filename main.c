@@ -73,6 +73,9 @@ void	test_write(void)
 	printf("Error fd for ft_write: %zd", ft_write(-1, "write\n", ft_strlen("write\n")));
 	printf("\n");
 	printf(" \n");
+	printf("Error with NULL for write: %zd errno = %d\n", write(1, NULL, 1), errno);
+	printf("Error with NULL for ft_write: %zd errno = %d\n", ft_write(1, NULL, 1), errno);
+	printf(" \n");
 	system("touch write.txt");
 	fd = open("write.txt", O_WRONLY);
 	printf("write: %zd\n", write(fd, "write: hello 21 school\n", 23));
@@ -85,7 +88,6 @@ void	test_write(void)
 void	test_read(void)
 {
 	int		fd1;
-	int		fd2;
 	void	*buff;
 
 	printf("\n|===========|=READ=|===========|\n");
@@ -93,17 +95,18 @@ void	test_read(void)
 	fd1 = open("write.txt", O_RDONLY);
 	buff = malloc(sizeof(char) * 1);
 	read(fd1, buff, 100);
-	printf("++++++read write.txt++++++\n%s\n", buff);
-	free(buff);
-	close(fd1);
-	fd2 = open("write.txt", O_RDONLY);
-	buff = malloc(sizeof(char) * 1);
-	ft_read(fd2, buff, 100);
-	printf("++++++ft_read write.txt++++++\n%s\n", buff);
-	free(buff);
-	close(fd2);
+	ft_read(fd1, buff, 100);
+	printf("read\n%s\n", buff);
+	printf("ft_read\n%s\n", buff);
+	printf("\n");
 	printf("Error fd for read: %zd\n", read(-1, buff, 100));
 	printf("Error fd for ft_read: %zd\n", ft_read(-1, buff, 100));
+	printf("\n");
+	printf("Error with NULL for read: %zd errno = %d\n", read(fd1, buff, 10), errno);
+	printf("Error with NULL for ft_read: %zd errno = %d\n", ft_read(fd1, buff, 10), errno);
+	printf("\n");
+	free(buff);
+	close(fd1);
 }
 
 void	test_strdup(void)
