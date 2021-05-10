@@ -16,6 +16,7 @@
 	https://ravesli.com/assembler-usloviya/
 	https://cs.lmu.edu/~ray/notes/nasmtutorial/
 	http://natalia.appmat.ru/c&c++/assembler.html
+	http://cs.mipt.ru/wp/wp-content/uploads/2018/09/07-assembly.pdf
 */
 
 #include "libasm.h"
@@ -68,9 +69,8 @@ void	test_write(void)
 
 	printf("\n|===========|=WRITE=|===========|\n");
 	printf("\n");
-	printf("Error fd for write: %zd", write(-1, "write\n", strlen("write\n")));
-	printf("\n");
-	printf("Error fd for ft_write: %zd", ft_write(-1, "write\n", ft_strlen("write\n")));
+	printf("Error fd for write: %zd errno = %d\n", write(-1, "write\n", strlen("write\n")), errno);
+	printf("Error fd for ft_write: %zd errno = %d\n", ft_write(-1, "write\n", ft_strlen("write\n")), errno);
 	printf("\n");
 	printf(" \n");
 	printf("Error with NULL for write: %zd errno = %d\n", write(1, NULL, 1), errno);
@@ -99,11 +99,11 @@ void	test_read(void)
 	printf("read\n%s\n", buff);
 	printf("ft_read\n%s\n", buff);
 	printf("\n");
-	printf("Error fd for read: %zd\n", read(-1, buff, 100));
-	printf("Error fd for ft_read: %zd\n", ft_read(-1, buff, 100));
+	printf("Error fd for read: %zd errno = %d\n", read(-1, buff, 100), errno);
+	printf("Error fd for ft_read: %zd errno = %d\n", ft_read(-1, buff, 100), errno);
 	printf("\n");
-	printf("Error with NULL for read: %zd errno = %d\n", read(fd1, buff, 10), errno);
-	printf("Error with NULL for ft_read: %zd errno = %d\n", ft_read(fd1, buff, 10), errno);
+	printf("Error with NULL for read: %zd errno = %d\n", read(fd1, NULL, 100), errno);
+	printf("Error with NULL for ft_read: %zd errno = %d\n", ft_read(fd1, NULL, 100), errno);
 	printf("\n");
 	free(buff);
 	close(fd1);
